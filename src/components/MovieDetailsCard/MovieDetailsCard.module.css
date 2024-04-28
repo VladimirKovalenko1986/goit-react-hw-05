@@ -1,0 +1,42 @@
+.link {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 3px 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.textLink {
+  margin-left: 5px;
+}
+
+.conteiner {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.conteinerImg {
+  height: 100%;
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+}
+
+.conteinerCard {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.text {
+  margin-bottom: 10px;
+}
