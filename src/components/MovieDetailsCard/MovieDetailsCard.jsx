@@ -3,15 +3,11 @@ import { Link } from "react-router-dom";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 
 export default function MovieDetailsCard({
-  movieDetails: {
-    original_title,
-    vote_average,
-    overview,
-    genres,
-    backdrop_path,
-  },
+  movieDetails: { original_title, vote_average, overview, genres, poster_path },
 }) {
   const genreNames = genres.map((genre) => genre.name).join(", ");
+  const defaultImg =
+    "<https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg>";
   return (
     <div>
       <Link className={css.link} to="/">
@@ -22,7 +18,11 @@ export default function MovieDetailsCard({
         <div className={css.conteinerImg}>
           <img
             className={css.img}
-            src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                : defaultImg
+            }
             alt={original_title}
           />
         </div>

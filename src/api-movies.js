@@ -19,4 +19,10 @@ const fetchMoviesDetails = async (movieId) => {
   return responce.data;
 };
 
-export { fetchTrendingMovies, fetchMoviesDetails };
+const fetchMovieCast = async (movieId) => {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`;
+  const responce = await axios.get(url, options);
+  return responce.data;
+};
+
+export { fetchTrendingMovies, fetchMoviesDetails, fetchMovieCast };
