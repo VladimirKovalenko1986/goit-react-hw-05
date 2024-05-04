@@ -1,0 +1,34 @@
+.conteiner {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  padding: 5px;
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  outline: none;
+}
+
+.button {
+  padding: 5px;
+  height: 30px;
+  cursor: pointer;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid black;
+}

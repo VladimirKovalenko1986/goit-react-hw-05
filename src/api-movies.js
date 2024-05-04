@@ -25,4 +25,22 @@ const fetchMovieCast = async (movieId) => {
   return responce.data;
 };
 
-export { fetchTrendingMovies, fetchMoviesDetails, fetchMovieCast };
+const fetchMovieReviews = async (movieId) => {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US&page=1`;
+  const responce = await axios.get(url, options);
+  return responce.data;
+};
+
+const fetchMovieSearch = async (serchQuery) => {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${serchQuery}&include_adult=false&language=en-US&page=1`;
+  const responce = await axios.get(url, options);
+  return responce.data;
+};
+
+export {
+  fetchTrendingMovies,
+  fetchMoviesDetails,
+  fetchMovieCast,
+  fetchMovieReviews,
+  fetchMovieSearch,
+};

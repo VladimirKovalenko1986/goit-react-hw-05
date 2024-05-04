@@ -1,6 +1,5 @@
 .conteiner {
   margin-left: 5px;
-  border-bottom: 1px solid black;
 }
 
 .text {
@@ -8,8 +7,13 @@
 }
 
 .list {
-  margin-left: 40px;
   margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.item {
+  margin-left: 40px;
 }
 
 .link {

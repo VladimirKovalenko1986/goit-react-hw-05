@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { fetchMovieCast } from "../../api-movies";
 import { useState, useEffect } from "react";
-import MovieCastList from "../App/MovieCastList/MovieCastList";
-import Loader from "../App/Loader/Loader";
-import ErrorMessage from "../App/ErrorMessage/ErrorMessage";
+import MovieCastList from "../MovieCastList/MovieCastList";
+import Loader from "../Loader/Loader";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 export default function MovieCast() {
   const { moviesId } = useParams();
@@ -19,7 +19,6 @@ export default function MovieCast() {
       try {
         setIsLoading(true);
         const data = await fetchMovieCast(moviesId);
-        console.log(data.cast);
         setMovieCast(data.cast);
       } catch (error) {
         setError(true);
@@ -30,5 +29,11 @@ export default function MovieCast() {
     fetchCastId();
   }, [moviesId]);
 
-  return <div>{setMovieCast && <MovieCastList movieCast={movieCast} />}</div>;
+  return (
+    <div>
+      {isLoading && <Loader />}
+      {error && <ErrorMessage />}
+      {movieCast && <MovieCastList movieCast={movieCast} />}
+    </div>
+  );
 }

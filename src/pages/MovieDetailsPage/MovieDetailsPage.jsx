@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchMoviesDetails } from "../../api-movies";
 import { Link, Outlet } from "react-router-dom";
-import Loader from "../../components/App/Loader/Loader";
-import ErrorMessage from "../../components/App/ErrorMessage/ErrorMessage";
+import Loader from "../../components/Loader/Loader";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import MovieDetailsCard from "../../components/MovieDetailsCard/MovieDetailsCard";
+import { Suspense } from "react";
 
 export default function MovieDetailsPage() {
   const { moviesId } = useParams();
@@ -37,21 +38,23 @@ export default function MovieDetailsPage() {
       {error && <ErrorMessage />}
       {movieDetails && <MovieDetailsCard movieDetails={movieDetails} />}
 
-      <p className={css.text}>Additional iformation</p>
+      <p className={css.text}>Additional information</p>
 
       <ul className={css.list}>
-        <li>
+        <li className={css.item}>
           <Link to="cast" className={css.link}>
             Cast
           </Link>
         </li>
-        <li>
+        <li className={css.item}>
           <Link to="reviews" className={css.link}>
             Reviews
           </Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }

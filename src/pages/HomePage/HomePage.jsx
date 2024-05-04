@@ -3,8 +3,8 @@ import Title from "../../components/Title/Title";
 import { fetchTrendingMovies } from "../../api-movies";
 import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList";
-import Loader from "../../components/App/Loader/Loader";
-import ErrorMessage from "../../components/App/ErrorMessage/ErrorMessage";
+import Loader from "../../components/Loader/Loader";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
